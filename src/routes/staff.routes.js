@@ -4,6 +4,7 @@ import { createSchedule } from "../controllers/staff.controller.js";
 
 const router = Router()
 
+// Secured Routes
 router.route("/schedule").post(verifyJWT, authorizeRoles("staff"), createSchedule)
 
 export default router

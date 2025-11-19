@@ -4,7 +4,7 @@ import { addStudentToSchedule, deleteScheduleById, getScheduleById, getSchedules
 
 const router = Router()
 
-
+// Secured Routes
 router.route("/student/:studentId").get(verifyJWT,authorizeRoles("admin", "student"), getStudentById)
 router.route("/staff/:staffId").get(verifyJWT, authorizeRoles("admin", "staff"), getStaffById)
 router.route("/student/:studentId").patch(verifyJWT,authorizeRoles("admin", "student"), updateStudentById)

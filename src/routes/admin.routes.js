@@ -4,6 +4,7 @@ import { deleteStaffById, deleteStudentfById, getAllStaffs, getAllStudents, regi
 
 const router = Router()
 
+// Secured Routes
 router.route("/register-user").post(verifyJWT, authorizeRoles("admin"), registerUser)
 router.route("/students").get(verifyJWT, authorizeRoles("admin"), getAllStudents)
 router.route("/staffs").get(verifyJWT, authorizeRoles("admin"), getAllStaffs)

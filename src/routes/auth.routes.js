@@ -6,7 +6,7 @@ const router = Router()
 
 router.route("/login").post(userLogin)
 
-// Secured route
+// Secured Routes
 router.route("/logout").post(verifyJWT, userLogout)
 
 export default router

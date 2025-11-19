@@ -38,6 +38,11 @@ Made use of Javascript, node.js, express.js and MongoDB to build this system. In
 ## Assumptions-Made
 1. Used createAdmin.js script to add main Admin to the database
 2. The main admin can then add more admins, staffs or students to the portal
+3. staff.controller.js contains controllers that can be accessed only by staffs
+4. admin.controller.js contains controllers that can be accessed only by admins
+3. user.controller.js file contains controllers that can be accessed by atleast two roles
+4. As there is no data that can be accessed by students alone, I avoided student.controller.js 
+
 
 
 
