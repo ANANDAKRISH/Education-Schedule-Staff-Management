@@ -1,0 +1,2116 @@
+{
+	"info": {
+		"_postman_id": "72bb7e44-92c2-4356-9b54-dfe4a88bfca2",
+		"name": "StaffManagement&EducationSchedule",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36195348"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"adminMain@Securedemail.com\",\r\n    \"userName\" : \"MainAdmin\",\r\n    \"password\" : \"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "This API allows registered users to log in and then generates access and refresh tokens for Secured hassle-free navigation."
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"MainAdmin\",\r\n    \"password\": \"Admin@123\",\r\n    \"email\": \"adminMain@Securedemail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/auth/login",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTFkY2JjN2U2MGFmYWI2N2ZjOTFhZmMiLCJlbWFpbCI6ImFkbWlubWFpbkBzZWN1cmVkZW1haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbm1haW5Ac2VjdXJlZGVtYWlsLmNvbSIsImZ1bGxOYW1lIjoiQW5hbmQiLCJpYXQiOjE3NjM1NjA4MDUsImV4cCI6MTc2MzY0NzIwNX0.bHWMRbDbEqZCs8Tcvxrv0UilCgdQFvXRUBRposyxeBo; Path=/; HttpOnly; Secure"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTFkY2JjN2U2MGFmYWI2N2ZjOTFhZmMiLCJpYXQiOjE3NjM1NjA4MDUsImV4cCI6MTc2NDQyNDgwNX0.dk0wb2zLw5PpuGBzavO0Pq11ofo3ZyJGouSL2Mp3cjI; Path=/; HttpOnly; Secure"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "725"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d5-Rcm0mQ2jk+byfUO932k9WvhVYzQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:00:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"user\": {\n            \"_id\": \"691dcbc7e60afab67fc91afc\",\n            \"userName\": \"mainadmin\",\n            \"email\": \"adminmain@securedemail.com\",\n            \"fullName\": \"Anand\",\n            \"role\": \"admin\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTFkY2JjN2U2MGFmYWI2N2ZjOTFhZmMiLCJlbWFpbCI6ImFkbWlubWFpbkBzZWN1cmVkZW1haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbm1haW5Ac2VjdXJlZGVtYWlsLmNvbSIsImZ1bGxOYW1lIjoiQW5hbmQiLCJpYXQiOjE3NjM1NjA4MDUsImV4cCI6MTc2MzY0NzIwNX0.bHWMRbDbEqZCs8Tcvxrv0UilCgdQFvXRUBRposyxeBo\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTFkY2JjN2U2MGFmYWI2N2ZjOTFhZmMiLCJpYXQiOjE3NjM1NjA4MDUsImV4cCI6MTc2NDQyNDgwNX0.dk0wb2zLw5PpuGBzavO0Pq11ofo3ZyJGouSL2Mp3cjI\"\n    },\n    \"message\": \"User logged In Successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTFkY2JjN2U2MGFmYWI2N2ZjOTFhZmMiLCJlbWFpbCI6ImFkbWlubWFpbkBzZWN1cmVkZW1haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbm1haW5Ac2VjdXJlZGVtYWlsLmNvbSIsImZ1bGxOYW1lIjoiQW5hbmQiLCJpYXQiOjE3NjM1NjA4MDUsImV4cCI6MTc2MzY0NzIwNX0.bHWMRbDbEqZCs8Tcvxrv0UilCgdQFvXRUBRposyxeBo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/auth/logout",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						},
+						"description": "This API logs out the user from current session."
+					},
+					"response": [
+						{
+							"name": "logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTFkY2JjN2U2MGFmYWI2N2ZjOTFhZmMiLCJlbWFpbCI6ImFkbWlubWFpbkBzZWN1cmVkZW1haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbm1haW5Ac2VjdXJlZGVtYWlsLmNvbSIsImZ1bGxOYW1lIjoiQW5hbmQiLCJpYXQiOjE3NjM1NjA4MDUsImV4cCI6MTc2MzY0NzIwNX0.bHWMRbDbEqZCs8Tcvxrv0UilCgdQFvXRUBRposyxeBo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/auth/logout",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "102"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"66-nQbsfodB1tJ9eUse9CVswPIHOE4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:16:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"user\": \"mainadmin\"\n    },\n    \"message\": \"User logged out successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "retrieve-student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/student/:studentId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"student",
+								":studentId"
+							],
+							"variable": [
+								{
+									"key": "studentId",
+									"value": "691dd2524fa97bab3926ae9b"
+								}
+							]
+						},
+						"description": "This API helps to retrieve sepcific student data based on unique document-ID."
+					},
+					"response": [
+						{
+							"name": "retrieve-student",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/student/:studentId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"student",
+										":studentId"
+									],
+									"variable": [
+										{
+											"key": "studentId",
+											"value": "691dd2524fa97bab3926ae9b"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'none'"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1165"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:54:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Error: Access denied\n            <br> &nbsp; &nbsp;at new ApiError (file:///C:/Users/anand/Desktop/MF/ADVANCE/MY%20COURSES/FULL-STACK/MY%20PROJECTS/Education%20Schedule%20Staff%20Management/src/utilities/ApiError.js:13:19)\n            <br> &nbsp; &nbsp;at file:///C:/Users/anand/Desktop/MF/ADVANCE/MY%20COURSES/FULL-STACK/MY%20PROJECTS/Education%20Schedule%20Staff%20Management/src/middlewares/auth.middleware.js:39:25\n            <br> &nbsp; &nbsp;at Layer.handleRequest (C:\\Users\\anand\\Desktop\\MF\\ADVANCE\\MY COURSES\\FULL-STACK\\MY PROJECTS\\Education Schedule Staff Management\\node_modules\\router\\lib\\layer.js:152:17)\n            <br> &nbsp; &nbsp;at next (C:\\Users\\anand\\Desktop\\MF\\ADVANCE\\MY COURSES\\FULL-STACK\\MY PROJECTS\\Education Schedule Staff Management\\node_modules\\router\\lib\\route.js:157:13)\n            <br> &nbsp; &nbsp;at verifyJWT (file:///C:/Users/anand/Desktop/MF/ADVANCE/MY%20COURSES/FULL-STACK/MY%20PROJECTS/Education%20Schedule%20Staff%20Management/src/middlewares/auth.middleware.js:24:9)\n            <br> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n        </pre>\n    </body>\n</html>"
+						},
+						{
+							"name": "retrieve-student",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/student/:studentId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"student",
+										":studentId"
+									],
+									"variable": [
+										{
+											"key": "studentId",
+											"value": "691dd2524fa97bab3926ae9b"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "209"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d1-EpWrb163WDE2YaDWwIqVjCw6/Zw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:58:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"691dd2524fa97bab3926ae9b\",\n        \"userName\": \"rolex\",\n        \"email\": \"rolex@gmail.coml\",\n        \"fullName\": \"Rolex rolex\",\n        \"role\": \"student\"\n    },\n    \"message\": \"Fetched student data successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "retrieve-staff",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/staff/:staffId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"staff",
+								":staffId"
+							],
+							"variable": [
+								{
+									"key": "staffId",
+									"value": "691dd5746f9829aefc2ddd43"
+								}
+							]
+						},
+						"description": "This API helps to retrieve sepcific staff data based on unique document-ID."
+					},
+					"response": [
+						{
+							"name": "retrieve-staff",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/staff/:staffId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"staff",
+										":staffId"
+									],
+									"variable": [
+										{
+											"key": "staffId",
+											"value": "691dd5746f9829aefc2ddd43"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "213"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d5-OuGAp3EP5etNJd7KZ5KH5AQaM34\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 15:00:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"691dd5746f9829aefc2ddd43\",\n        \"userName\": \"washo\",\n        \"email\": \"washiwashi@gmail.coml\",\n        \"fullName\": \"Sundar washi\",\n        \"role\": \"staff\"\n    },\n    \"message\": \"Fetched student data successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "student-updation",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\" : \"Rolex-Surya\",\r\n    \"age\" : 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/student/:studentId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"student",
+								":studentId"
+							],
+							"variable": [
+								{
+									"key": "studentId",
+									"value": "691dd2524fa97bab3926ae9b"
+								}
+							]
+						},
+						"description": "This API helps to update sepcific student data based on unique document-ID."
+					},
+					"response": [
+						{
+							"name": "student-updation",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\" : \"Rolex-Surya\",\r\n    \"age\" : 25\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/student/:studentId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"student",
+										":studentId"
+									],
+									"variable": [
+										{
+											"key": "studentId",
+											"value": "691dd2524fa97bab3926ae9b"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "213"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d5-gmgZfXq8JxBbX3z6jRSDsnzbYOM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 15:05:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"691dd2524fa97bab3926ae9b\",\n        \"userName\": \"rolex\",\n        \"email\": \"rolex@gmail.coml\",\n        \"fullName\": \"Rolex-Surya\",\n        \"role\": \"student\",\n        \"age\": 25\n    },\n    \"message\": \"Profile updated successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "staff-updation",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\" : \"Washington Sundar\",\r\n    \"address\" : \"Chennai, Navallur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/staff/:staffId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"staff",
+								":staffId"
+							],
+							"variable": [
+								{
+									"key": "staffId",
+									"value": "691dd5746f9829aefc2ddd43"
+								}
+							]
+						},
+						"description": "This API helps to update sepcific staff data based on unique document-ID."
+					},
+					"response": [
+						{
+							"name": "staff-updation",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\" : \"Washington Sundar\",\r\n    \"address\" : \"Chennai, Navallur\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/staff/:staffId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"staff",
+										":staffId"
+									],
+									"variable": [
+										{
+											"key": "staffId",
+											"value": "691dd5746f9829aefc2ddd43"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "243"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f3-7f/ubpz+3tODOesKsQiDalb7sek\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 15:18:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"691dd5746f9829aefc2ddd43\",\n        \"userName\": \"washo\",\n        \"email\": \"washiwashi@gmail.coml\",\n        \"fullName\": \"Washington Sundar\",\n        \"role\": \"staff\",\n        \"address\": \"Chennai, Navallur\"\n    },\n    \"message\": \"Profile updated successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "retrieve-schedules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/schedules?s=blockchain&batch=A",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"schedules"
+							],
+							"query": [
+								{
+									"key": "s",
+									"value": "blockchain"
+								},
+								{
+									"key": "batch",
+									"value": "A"
+								}
+							]
+						},
+						"description": "This API helps to retrieve schedules based on filters."
+					},
+					"response": [
+						{
+							"name": "retrieve-schedules",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/schedules?s=backend",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"schedules"
+									],
+									"query": [
+										{
+											"key": "s",
+											"value": "backend"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2744"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab8-5IK7KZC01Mv9dhBouOp4N8mR9xo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 16:05:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"schedules\": [\n            {\n                \"_id\": \"691dd829d76912f2ced2e9d3\",\n                \"title\": \"Summer bootcamp\",\n                \"yearNo\": 2025,\n                \"semesterNo\": 4,\n                \"batch\": \"B\",\n                \"startAt\": \"2024-12-31T18:30:00.000Z\",\n                \"endAt\": \"2025-01-02T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T14:46:01.252Z\",\n                \"updatedAt\": \"2025-11-19T15:49:25.635Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691dd890d76912f2ced2e9d6\",\n                \"title\": \"Backend bootcamp\",\n                \"yearNo\": 2026,\n                \"semesterNo\": 4,\n                \"batch\": \"B\",\n                \"startAt\": \"2026-01-04T18:30:00.000Z\",\n                \"endAt\": \"2026-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T14:47:44.593Z\",\n                \"updatedAt\": \"2025-11-19T14:47:44.593Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691dd8add76912f2ced2e9d9\",\n                \"title\": \"Backend bootcamp\",\n                \"yearNo\": 2026,\n                \"semesterNo\": 4,\n                \"batch\": \"C\",\n                \"startAt\": \"2026-01-04T18:30:00.000Z\",\n                \"endAt\": \"2026-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T14:48:13.986Z\",\n                \"updatedAt\": \"2025-11-19T14:48:13.986Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691de85ad2e9790c8a9b9220\",\n                \"title\": \"RAG & MCP bootcamp\",\n                \"yearNo\": 2026,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2026-01-04T18:30:00.000Z\",\n                \"endAt\": \"2026-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T15:55:06.026Z\",\n                \"updatedAt\": \"2025-11-19T15:55:06.026Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691dd8e3d76912f2ced2e9df\",\n                \"title\": \"Full-stack AI bootcamp\",\n                \"yearNo\": 2028,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2028-01-04T18:30:00.000Z\",\n                \"endAt\": \"2028-01-05T18:30:00.000Z\",\n                \"attendees\": [\n                    {\n                        \"_id\": \"691dd2524fa97bab3926ae9b\",\n                        \"email\": \"rolex@gmail.coml\"\n                    }\n                ],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T14:49:07.816Z\",\n                \"updatedAt\": \"2025-11-19T15:43:28.820Z\",\n                \"__v\": 6\n            },\n            {\n                \"_id\": \"691de816d2e9790c8a9b921a\",\n                \"title\": \"Blockchain bootcamp\",\n                \"yearNo\": 2030,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2030-01-04T18:30:00.000Z\",\n                \"endAt\": \"2031-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T15:53:58.363Z\",\n                \"updatedAt\": \"2025-11-19T15:53:58.363Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691de834d2e9790c8a9b921d\",\n                \"title\": \"Blockchain bootcamp 2.0\",\n                \"yearNo\": 2031,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2031-01-04T18:30:00.000Z\",\n                \"endAt\": \"2032-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T15:54:28.502Z\",\n                \"updatedAt\": \"2025-11-19T15:54:28.502Z\",\n                \"__v\": 0\n            }\n        ],\n        \"currentPage\": 1,\n        \"totalPages\": 1,\n        \"totalDocumentCount\": 7,\n        \"limit\": 20,\n        \"hasNextPage\": false,\n        \"hasPrevPage\": false\n    },\n    \"message\": \"Success\",\n    \"success\": true\n}"
+						},
+						{
+							"name": "retrieve-schedules",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/schedules?from=2025-01-01",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"schedules"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "2025-01-01"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2390"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"956-Es77Ihuyz39xy/Saeb2Cz3MFbgY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 16:10:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"schedules\": [\n            {\n                \"_id\": \"691dd890d76912f2ced2e9d6\",\n                \"title\": \"Backend bootcamp\",\n                \"yearNo\": 2026,\n                \"semesterNo\": 4,\n                \"batch\": \"B\",\n                \"startAt\": \"2026-01-04T18:30:00.000Z\",\n                \"endAt\": \"2026-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T14:47:44.593Z\",\n                \"updatedAt\": \"2025-11-19T14:47:44.593Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691dd8add76912f2ced2e9d9\",\n                \"title\": \"Backend bootcamp\",\n                \"yearNo\": 2026,\n                \"semesterNo\": 4,\n                \"batch\": \"C\",\n                \"startAt\": \"2026-01-04T18:30:00.000Z\",\n                \"endAt\": \"2026-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T14:48:13.986Z\",\n                \"updatedAt\": \"2025-11-19T14:48:13.986Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691de85ad2e9790c8a9b9220\",\n                \"title\": \"RAG & MCP bootcamp\",\n                \"yearNo\": 2026,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2026-01-04T18:30:00.000Z\",\n                \"endAt\": \"2026-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T15:55:06.026Z\",\n                \"updatedAt\": \"2025-11-19T15:55:06.026Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691dd8e3d76912f2ced2e9df\",\n                \"title\": \"Full-stack AI bootcamp\",\n                \"yearNo\": 2028,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2028-01-04T18:30:00.000Z\",\n                \"endAt\": \"2028-01-05T18:30:00.000Z\",\n                \"attendees\": [\n                    {\n                        \"_id\": \"691dd2524fa97bab3926ae9b\",\n                        \"email\": \"rolex@gmail.coml\"\n                    }\n                ],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T14:49:07.816Z\",\n                \"updatedAt\": \"2025-11-19T15:43:28.820Z\",\n                \"__v\": 6\n            },\n            {\n                \"_id\": \"691de816d2e9790c8a9b921a\",\n                \"title\": \"Blockchain bootcamp\",\n                \"yearNo\": 2030,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2030-01-04T18:30:00.000Z\",\n                \"endAt\": \"2031-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T15:53:58.363Z\",\n                \"updatedAt\": \"2025-11-19T15:53:58.363Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691de834d2e9790c8a9b921d\",\n                \"title\": \"Blockchain bootcamp 2.0\",\n                \"yearNo\": 2031,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2031-01-04T18:30:00.000Z\",\n                \"endAt\": \"2032-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T15:54:28.502Z\",\n                \"updatedAt\": \"2025-11-19T15:54:28.502Z\",\n                \"__v\": 0\n            }\n        ],\n        \"currentPage\": 1,\n        \"totalPages\": 1,\n        \"totalDocumentCount\": 6,\n        \"limit\": 20,\n        \"hasNextPage\": false,\n        \"hasPrevPage\": false\n    },\n    \"message\": \"Success\",\n    \"success\": true\n}"
+						},
+						{
+							"name": "retrieve-schedules",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/schedules?s=blockchain&batch=A",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"schedules"
+									],
+									"query": [
+										{
+											"key": "s",
+											"value": "blockchain"
+										},
+										{
+											"key": "batch",
+											"value": "A"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "901"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"385-AKmILRqA2McdtKAIInkgjpSosuE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 16:11:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"schedules\": [\n            {\n                \"_id\": \"691de816d2e9790c8a9b921a\",\n                \"title\": \"Blockchain bootcamp\",\n                \"yearNo\": 2030,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2030-01-04T18:30:00.000Z\",\n                \"endAt\": \"2031-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T15:53:58.363Z\",\n                \"updatedAt\": \"2025-11-19T15:53:58.363Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"691de834d2e9790c8a9b921d\",\n                \"title\": \"Blockchain bootcamp 2.0\",\n                \"yearNo\": 2031,\n                \"semesterNo\": 8,\n                \"batch\": \"A\",\n                \"startAt\": \"2031-01-04T18:30:00.000Z\",\n                \"endAt\": \"2032-01-05T18:30:00.000Z\",\n                \"attendees\": [],\n                \"createdBy\": {\n                    \"_id\": \"691dd5746f9829aefc2ddd43\",\n                    \"email\": \"washiwashi@gmail.coml\"\n                },\n                \"createdAt\": \"2025-11-19T15:54:28.502Z\",\n                \"updatedAt\": \"2025-11-19T15:54:28.502Z\",\n                \"__v\": 0\n            }\n        ],\n        \"currentPage\": 1,\n        \"totalPages\": 1,\n        \"totalDocumentCount\": 2,\n        \"limit\": 20,\n        \"hasNextPage\": false,\n        \"hasPrevPage\": false\n    },\n    \"message\": \"Success\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "retrieve-schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/schedule/:scheduleId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"schedule",
+								":scheduleId"
+							],
+							"variable": [
+								{
+									"key": "scheduleId",
+									"value": "691dd8e3d76912f2ced2e9df"
+								}
+							]
+						},
+						"description": "This API helps to retrieve specifc schedule based on documentID."
+					},
+					"response": [
+						{
+							"name": "retrieve-schedule",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/schedule/:scheduleId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"schedule",
+										":scheduleId"
+									],
+									"variable": [
+										{
+											"key": "scheduleId",
+											"value": "691dd8e3d76912f2ced2e9df"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "403"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"193-vaum0PZDoxUZ2w4MMt5Ijr32AJo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 15:22:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"691dd8e3d76912f2ced2e9df\",\n        \"title\": \"Full-stack AI bootcamp\",\n        \"yearNo\": 2028,\n        \"semesterNo\": 8,\n        \"batch\": \"A\",\n        \"startAt\": \"2028-01-04T18:30:00.000Z\",\n        \"endAt\": \"2028-01-05T18:30:00.000Z\",\n        \"attendees\": [],\n        \"createdBy\": \"691dd5746f9829aefc2ddd43\",\n        \"createdAt\": \"2025-11-19T14:49:07.816Z\",\n        \"updatedAt\": \"2025-11-19T14:49:07.816Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Schedule fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "update-schedule",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"yearNo\" : 2025, \r\n    \"semesterNo\" : 4, \r\n    \"batch\" :\"B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/schedule/:scheduleId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"schedule",
+								":scheduleId"
+							],
+							"variable": [
+								{
+									"key": "scheduleId",
+									"value": "691dd829d76912f2ced2e9d3"
+								}
+							]
+						},
+						"description": "This API helps to update specific schedule based on documentID."
+					},
+					"response": [
+						{
+							"name": "update-schedule",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"yearNo\" : 2025, \r\n    \"semesterNo\" : 4, \r\n    \"batch\" :\"B\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/schedule/:scheduleId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"schedule",
+										":scheduleId"
+									],
+									"variable": [
+										{
+											"key": "scheduleId",
+											"value": "691dd829d76912f2ced2e9d3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "396"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18c-CDzE+b7XMOb89h0tpQi8Rpl+48g\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 15:49:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"691dd829d76912f2ced2e9d3\",\n        \"title\": \"Summer bootcamp\",\n        \"yearNo\": 2025,\n        \"semesterNo\": 4,\n        \"batch\": \"B\",\n        \"startAt\": \"2024-12-31T18:30:00.000Z\",\n        \"endAt\": \"2025-01-02T18:30:00.000Z\",\n        \"attendees\": [],\n        \"createdBy\": \"691dd5746f9829aefc2ddd43\",\n        \"createdAt\": \"2025-11-19T14:46:01.252Z\",\n        \"updatedAt\": \"2025-11-19T15:49:25.635Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Schedule updated successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "delete-schedule",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/schedule/:scheduleId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"schedule",
+								":scheduleId"
+							],
+							"variable": [
+								{
+									"key": "scheduleId",
+									"value": "691dd8b4d76912f2ced2e9dc"
+								}
+							]
+						},
+						"description": "This API helps to delete specific schedule based on documentID."
+					},
+					"response": [
+						{
+							"name": "delete-schedule",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/schedule/:scheduleId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"schedule",
+										":scheduleId"
+									],
+									"variable": [
+										{
+											"key": "scheduleId",
+											"value": "691dd8b4d76912f2ced2e9dc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "426"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1aa-suCdONl7814S8ShI/3c/PG2tnv0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 15:24:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"deletedSchedule\": {\n            \"_id\": \"691dd8b4d76912f2ced2e9dc\",\n            \"title\": \"Backend bootcamp\",\n            \"yearNo\": 2026,\n            \"semesterNo\": 4,\n            \"batch\": \"D\",\n            \"startAt\": \"2026-01-04T18:30:00.000Z\",\n            \"endAt\": \"2026-01-05T18:30:00.000Z\",\n            \"attendees\": [],\n            \"createdBy\": \"691dd5746f9829aefc2ddd43\",\n            \"createdAt\": \"2025-11-19T14:48:20.900Z\",\n            \"updatedAt\": \"2025-11-19T14:48:20.900Z\",\n            \"__v\": 0\n        }\n    },\n    \"message\": \"Schedule document deleted successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "student-addition",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"scheduleId\" : \"691dd8e3d76912f2ced2e9df\", \r\n    \"studentId\" : \"691dd2524fa97bab3926ae9b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/student-addition",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"student-addition"
+							]
+						},
+						"description": "This API helps to add a specific student to a specific schedule."
+					},
+					"response": [
+						{
+							"name": "student-addition",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"scheduleId\" : \"691dd8e3d76912f2ced2e9df\", \r\n    \"studentId\" : \"691dd2524fa97bab3926ae9b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/student-addition",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"student-addition"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "425"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a9-Y7SxXBCoqs82EXubgUqb7dc9fMs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 15:33:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"691dd8e3d76912f2ced2e9df\",\n        \"title\": \"Full-stack AI bootcamp\",\n        \"yearNo\": 2028,\n        \"semesterNo\": 8,\n        \"batch\": \"A\",\n        \"startAt\": \"2028-01-04T18:30:00.000Z\",\n        \"endAt\": \"2028-01-05T18:30:00.000Z\",\n        \"attendees\": [\n            \"691dd2524fa97bab3926ae9b\"\n        ],\n        \"createdBy\": \"691dd5746f9829aefc2ddd43\",\n        \"createdAt\": \"2025-11-19T14:49:07.816Z\",\n        \"updatedAt\": \"2025-11-19T15:33:42.526Z\",\n        \"__v\": 1\n    },\n    \"message\": \"Student added to schedule\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "student-removal",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"scheduleId\" : \"691dd8e3d76912f2ced2e9df\", \r\n    \"studentId\" : \"691dd2524fa97bab3926ae9b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/student-removal",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"student-removal"
+							]
+						},
+						"description": "This API helps to remove a specific student from a specific schedule."
+					},
+					"response": [
+						{
+							"name": "student-removal",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"scheduleId\" : \"691dd8e3d76912f2ced2e9df\", \r\n    \"studentId\" : \"691dd2524fa97bab3926ae9b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/users/student-removal",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"student-removal"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "403"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"193-v8+uiVDjNiaPJDNkrXfNfi4J3wI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 15:35:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"691dd8e3d76912f2ced2e9df\",\n        \"title\": \"Full-stack AI bootcamp\",\n        \"yearNo\": 2028,\n        \"semesterNo\": 8,\n        \"batch\": \"A\",\n        \"startAt\": \"2028-01-04T18:30:00.000Z\",\n        \"endAt\": \"2028-01-05T18:30:00.000Z\",\n        \"attendees\": [],\n        \"createdBy\": \"691dd5746f9829aefc2ddd43\",\n        \"createdAt\": \"2025-11-19T14:49:07.816Z\",\n        \"updatedAt\": \"2025-11-19T15:35:49.083Z\",\n        \"__v\": 2\n    },\n    \"message\": \"Student removed from schedule\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"user1\",\r\n    \"password\": \"aajujssaaaa\",\r\n    \"email\": \"ikikikiwashi@gmail.com\",\r\n    \"fullName\": \"user123\",\r\n    \"role\" : \"staff\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/admins/register-user",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"admins",
+								"register-user"
+							]
+						},
+						"description": "This API helps to register a new user to the portal."
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Rolex\",\r\n    \"password\": \"siafddka\",\r\n    \"email\": \"rolex@gmail.coml\",\r\n    \"fullName\": \"Rolex rolex\",\r\n    \"role\" : \"student\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/admins/register-user",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"admins",
+										"register-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "204"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cc-BJ908+beE6DNnM9fGNOC5JHWRAY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:21:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"691dd2524fa97bab3926ae9b\",\n        \"userName\": \"rolex\",\n        \"email\": \"rolex@gmail.coml\",\n        \"fullName\": \"Rolex rolex\",\n        \"role\": \"student\"\n    },\n    \"message\": \"User Registered Successfully\",\n    \"success\": true\n}"
+						},
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\":\"user1\",\r\n    \"password\": \"aajujssaaaa\",\r\n    \"email\": \"ikikikiwashi@gmail.com\",\r\n    \"fullName\": \"user123\",\r\n    \"role\" : \"staff\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/admins/register-user",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"admins",
+										"register-user"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'none'"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1165"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:38:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Error: Access denied\n            <br> &nbsp; &nbsp;at new ApiError (file:///C:/Users/anand/Desktop/MF/ADVANCE/MY%20COURSES/FULL-STACK/MY%20PROJECTS/Education%20Schedule%20Staff%20Management/src/utilities/ApiError.js:13:19)\n            <br> &nbsp; &nbsp;at file:///C:/Users/anand/Desktop/MF/ADVANCE/MY%20COURSES/FULL-STACK/MY%20PROJECTS/Education%20Schedule%20Staff%20Management/src/middlewares/auth.middleware.js:39:25\n            <br> &nbsp; &nbsp;at Layer.handleRequest (C:\\Users\\anand\\Desktop\\MF\\ADVANCE\\MY COURSES\\FULL-STACK\\MY PROJECTS\\Education Schedule Staff Management\\node_modules\\router\\lib\\layer.js:152:17)\n            <br> &nbsp; &nbsp;at next (C:\\Users\\anand\\Desktop\\MF\\ADVANCE\\MY COURSES\\FULL-STACK\\MY PROJECTS\\Education Schedule Staff Management\\node_modules\\router\\lib\\route.js:157:13)\n            <br> &nbsp; &nbsp;at verifyJWT (file:///C:/Users/anand/Desktop/MF/ADVANCE/MY%20COURSES/FULL-STACK/MY%20PROJECTS/Education%20Schedule%20Staff%20Management/src/middlewares/auth.middleware.js:24:9)\n            <br> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n        </pre>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "retrieve-students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/admins/students",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"admins",
+								"students"
+							]
+						},
+						"description": "This API helps to retrieve all the students registered in he portal."
+					},
+					"response": [
+						{
+							"name": "retrieve-students",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/admins/students",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"admins",
+										"students"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "471"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d7-afjYEfTrnzfGjqb9lnUQyXkTwBE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:23:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"_id\": \"691dd2304fa97bab3926ae96\",\n            \"userName\": \"jocker\",\n            \"email\": \"josek@gmail.coml\",\n            \"fullName\": \"koler jo\",\n            \"role\": \"student\"\n        },\n        {\n            \"_id\": \"691dd2524fa97bab3926ae9b\",\n            \"userName\": \"rolex\",\n            \"email\": \"rolex@gmail.coml\",\n            \"fullName\": \"Rolex rolex\",\n            \"role\": \"student\"\n        },\n        {\n            \"_id\": \"691dd2874fa97bab3926aea0\",\n            \"userName\": \"fasty\",\n            \"email\": \"rolexafasty@gmail.coml\",\n            \"fullName\": \"fASTY ser\",\n            \"role\": \"student\"\n        }\n    ],\n    \"message\": \"List of all Student data fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "retrieve-staffs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/admins/staffs",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"admins",
+								"staffs"
+							]
+						},
+						"description": "This API helps to retrieve all the staffs registered in he portal."
+					},
+					"response": [
+						{
+							"name": "retrieve-staffs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/admins/staffs",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"admins",
+										"staffs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "469"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d5-x4o+gYMhaenFWpUgUdiOVYHWiRg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:23:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"_id\": \"691dd1c64fa97bab3926ae87\",\n            \"userName\": \"kavin@123\",\n            \"email\": \"kacvin@gmail.coml\",\n            \"fullName\": \"Kavin Manohar\",\n            \"role\": \"staff\"\n        },\n        {\n            \"_id\": \"691dd1f04fa97bab3926ae8c\",\n            \"userName\": \"rohan@123\",\n            \"email\": \"rone@gmail.coml\",\n            \"fullName\": \"Rohan b\",\n            \"role\": \"staff\"\n        },\n        {\n            \"_id\": \"691dd20a4fa97bab3926ae91\",\n            \"userName\": \"korner\",\n            \"email\": \"rokorne@gmail.coml\",\n            \"fullName\": \"Korner fff\",\n            \"role\": \"staff\"\n        }\n    ],\n    \"message\": \"List of all Staff data fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "staff-delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/admins/staff-delete/:staffId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"admins",
+								"staff-delete",
+								":staffId"
+							],
+							"variable": [
+								{
+									"key": "staffId",
+									"value": "691dd1f04fa97bab3926ae8c"
+								}
+							]
+						},
+						"description": "This API helps to delete a specific staff from the portal."
+					},
+					"response": [
+						{
+							"name": "staff-delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/admins/staff-delete/:staffId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"admins",
+										"staff-delete",
+										":staffId"
+									],
+									"variable": [
+										{
+											"key": "staffId",
+											"value": "691dd1f04fa97bab3926ae8c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "214"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d6-m8aNJIihG58tIK/j+60uNBxlLQg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:30:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"deletedUser\": {\n            \"_id\": \"691dd1f04fa97bab3926ae8c\",\n            \"userName\": \"rohan@123\",\n            \"email\": \"rone@gmail.coml\",\n            \"fullName\": \"Rohan b\",\n            \"role\": \"staff\"\n        }\n    },\n    \"message\": \"User deleted successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "student-delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/admins/student-delete/:studentId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"admins",
+								"student-delete",
+								":studentId"
+							],
+							"variable": [
+								{
+									"key": "studentId",
+									"value": "691dd2304fa97bab3926ae96"
+								}
+							]
+						},
+						"description": "This API helps to delete a specific student from the portal."
+					},
+					"response": [
+						{
+							"name": "student-delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/admins/student-delete/:studentId",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"admins",
+										"student-delete",
+										":studentId"
+									],
+									"variable": [
+										{
+											"key": "studentId",
+											"value": "691dd2304fa97bab3926ae96"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d7-/EZOmTE47t0QzaLJBMLHLZAlCo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:32:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"deletedUser\": {\n            \"_id\": \"691dd2304fa97bab3926ae96\",\n            \"userName\": \"jocker\",\n            \"email\": \"josek@gmail.coml\",\n            \"fullName\": \"koler jo\",\n            \"role\": \"student\"\n        }\n    },\n    \"message\": \"User deleted successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Staff",
+			"item": [
+				{
+					"name": "schedule-creation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Full-stack AI bootcamp\",\r\n    \"yearNo\" : 2028,\r\n    \"semesterNo\" : 8,\r\n    \"batch\" : \"A\",\r\n    \"startAt\" : \"01-05-2028\",\r\n    \"endAt\" : \"01-06-2028\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/staffs/schedule",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"staffs",
+								"schedule"
+							]
+						},
+						"description": "This API helps to add a new schedule."
+					},
+					"response": [
+						{
+							"name": "schedule-creation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"Blockchain bootcamp\",\r\n    \"yearNo\" : 2030,\r\n    \"semesterNo\" : 8,\r\n    \"batch\" : \"A\",\r\n    \"startAt\" : \"01-05-2030\",\r\n    \"endAt\" : \"01-06-2031\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/staffs/schedule",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"staffs",
+										"schedule"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "403"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"193-K0d8izSPorGaG/VehKR6PS3RE9I\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Nov 2025 14:49:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"title\": \"Full-stack AI bootcamp\",\n        \"yearNo\": 2028,\n        \"semesterNo\": 8,\n        \"batch\": \"A\",\n        \"startAt\": \"2028-01-04T18:30:00.000Z\",\n        \"endAt\": \"2028-01-05T18:30:00.000Z\",\n        \"attendees\": [],\n        \"createdBy\": \"691dd5746f9829aefc2ddd43\",\n        \"_id\": \"691dd8e3d76912f2ced2e9df\",\n        \"createdAt\": \"2025-11-19T14:49:07.816Z\",\n        \"updatedAt\": \"2025-11-19T14:49:07.816Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Schedule created successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTFkY2JjN2U2MGFmYWI2N2ZjOTFhZmMiLCJlbWFpbCI6ImFkbWlubWFpbkBzZWN1cmVkZW1haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbm1haW5Ac2VjdXJlZGVtYWlsLmNvbSIsImZ1bGxOYW1lIjoiQW5hbmQiLCJpYXQiOjE3NjM1NjgyMDAsImV4cCI6MTc2MzY1NDYwMH0.sot-Data4POUSRcdhXQ7PEfC8wvI9HK2IRz_Gs7c1JU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

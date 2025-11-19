@@ -35,6 +35,7 @@ const userLogin = asyncHandler(async(req, res) => {
         secure: true
     }
 
+    // Set cookie in response
     return res
     .status(200)
     .cookie("accessToken", accessToken, options)
