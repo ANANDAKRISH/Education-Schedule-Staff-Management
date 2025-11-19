@@ -1,16 +1,15 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt"
 import { User } from "./src/models/user.model.js";
 
 const createAdmin = async(req, res) => {
     await mongoose.connect("connectionString/dbName")
-    
+
     const admin = await User.create({
-        userName: "",
+        userName: "MainAdmin",
         password: "",
-        email: "",
-        role: "",
-        fullName: ""
+        email: "adminMain@Securedemail.com",
+        role: "admin",
+        fullName: "Anand"
     })
 
     console.log("Admin created successfully");
