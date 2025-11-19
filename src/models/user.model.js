@@ -37,7 +37,11 @@ const userSchema = new Schema(
         },
         // Optional Role-Specific Fields
         department : {type: String}, // For staff
-        // add-more
+        age: {type: Number},
+        address: {
+            type: String,
+            trim: true
+        }
     },
     {
         toJSON: {

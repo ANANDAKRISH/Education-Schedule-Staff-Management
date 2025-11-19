@@ -1,14 +1,14 @@
-import { Schedule } from "../models/schedule.model";
-import { ApiError } from "../utilities/ApiError";
-import { ApiResponse } from "../utilities/ApiResponse";
-import { asyncHandler } from "../utilities/asyncHandler";
+import { Schedule } from "../models/schedule.model.js";
+import { ApiError } from "../utilities/ApiError.js";
+import { ApiResponse } from "../utilities/ApiResponse.js";
+import { asyncHandler } from "../utilities/asyncHandler.js";
 
 
 const createSchedule = asyncHandler(async(req, res) => {
-    const {yearNo, semesterNo, batch, startAt, endAt} = req.body
+    const {title, yearNo, semesterNo, batch, startAt, endAt} = req.body
     const currentStaff = req.user
 
-    if(!yearNo || !semesterNo || !batch || !startAt || !endAt) {
+    if(!title || !yearNo || !semesterNo || !batch || !startAt || !endAt) {
         throw new ApiError(400, "All fields are required")
     }
 
@@ -23,20 +23,8 @@ const createSchedule = asyncHandler(async(req, res) => {
         throw new ApiError(400, "End date cannot be earlier than start date")
     }
 
-    const existingSchedule = await Schedule.findOne({yearNo: yearNo, semesterNo: semesterNo, batch: batch})
-    if(existingSchedule) {
-        return res
-               .status(400)
-               .json(
-                new ApiResponse(
-                    400,
-                    [],
-                    "Schedule already exists"
-                )
-               )
-    }
-
     const createdSchedule = await Schedule.create({
+        title: title,
         yearNo: yearNo,
         semesterNo: semesterNo,
         batch: batch,

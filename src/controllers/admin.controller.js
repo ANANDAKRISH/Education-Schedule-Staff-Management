@@ -1,8 +1,7 @@
-import { ApiError } from "../utilities/ApiError";
-import { asyncHandler } from "../utilities/asyncHandler";
-import { User } from "../models/user.model";
-import { ApiResponse } from "../utilities/ApiResponse";
-import { generateAccessAndRefreshTokens } from "../utilities/generateTokens";
+import { ApiError } from "../utilities/ApiError.js";
+import { asyncHandler } from "../utilities/asyncHandler.js";
+import { User } from "../models/user.model.js";
+import { ApiResponse } from "../utilities/ApiResponse.js";
 import { isValidObjectId } from "mongoose";
 
 
@@ -50,7 +49,6 @@ const  registerUser = asyncHandler(async(req, res) => {
         new ApiResponse(200, createdUser, "User Registered Successfully")
     )
 })
-
 
 const getAllStudents = asyncHandler(async(req, res) => {
     const students = await User.find({role : "student"})

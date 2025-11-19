@@ -2,6 +2,11 @@ import mongoose, {Schema} from "mongoose";
 
 const scheduleScehma = new Schema(
     {
+        title  : {
+            type: String,
+            required: true,
+            trim: true
+        },
         yearNo : {
             type: Number,
             required: true
@@ -12,7 +17,8 @@ const scheduleScehma = new Schema(
         },
         batch: {
             type: String,
-            required: true
+            required: true,
+            uppercase: true
         },
         startAt: {
             type: Date,

@@ -24,6 +24,16 @@ app.use(express.urlencoded({
 
 app.use(cookieParser())
 
-// Routes
+// Routes import
+import authRouter from './routes/auth.routes.js'
+import userRouter from './routes/user.routes.js'
+import adminRouter from './routes/admin.routes.js'
+import staffRouter from './routes/staff.routes.js'
+
+// Routes declaration
+app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/users", userRouter)
+app.use("/api/v1/admins", adminRouter)
+app.use("/api/v1/staffs", staffRouter)
 
 export {app}

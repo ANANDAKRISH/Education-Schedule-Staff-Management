@@ -1,6 +1,6 @@
-import { User } from "../models/user.model"
+import { User } from "../models/user.model.js"
 import mongoose from "mongoose"
-import { ApiError } from "./ApiError"
+import { ApiError } from "./ApiError.js"
 
 const generateAccessAndRefreshTokens = async(userId) => {
     try {
