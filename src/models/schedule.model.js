@@ -31,7 +31,7 @@ const scheduleScehma = new Schema(
         attendees: [
             {
                 type: Schema.Types.ObjectId,
-                ref: "user"
+                ref: "User"
             }
         ],
         createdBy : {

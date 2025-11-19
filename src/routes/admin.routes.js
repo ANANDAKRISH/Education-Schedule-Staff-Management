@@ -7,7 +7,7 @@ const router = Router()
 router.route("/register-user").post(verifyJWT, authorizeRoles("admin"), registerUser)
 router.route("/students").get(verifyJWT, authorizeRoles("admin"), getAllStudents)
 router.route("/staffs").get(verifyJWT, authorizeRoles("admin"), getAllStaffs)
-router.route("/staff-delete/:id").delete(verifyJWT, authorizeRoles("admin"), deleteStaffById)
-router.route("/student-delete/:id").delete(verifyJWT, authorizeRoles("admin"), deleteStudentfById)
+router.route("/staff-delete/:staffId").delete(verifyJWT, authorizeRoles("admin"), deleteStaffById)
+router.route("/student-delete/:studentId").delete(verifyJWT, authorizeRoles("admin"), deleteStudentfById)
 
 export default router

@@ -1,5 +1,3 @@
-// Shared Operations (make use of req.user.role to validate)
-
 import { isValidObjectId } from "mongoose"
 import { ApiError } from "../utilities/ApiError.js"
 import { ApiResponse } from "../utilities/ApiResponse.js"
@@ -59,7 +57,7 @@ const getStaffById = asyncHandler(async(req, res) => {
             .json(
             new ApiResponse(
                 200,
-                student,
+                staff,
                 "Fetched student data successfully"
             )
             )
@@ -164,9 +162,9 @@ const updateStudentById = asyncHandler(async(req, res) => {
     }
 
     if(address) {
-        trimmedAddress = address.trim()
+        const trimmedAddress = address.trim()
         if(trimmedAddress && trimmedAddress !== existingStudent.address) {
-            existingStudent.address = address
+            existingStudent.address = trimmedAddress
             isModified = true
         }
     }
@@ -289,14 +287,14 @@ const updateStaffById = asyncHandler(async(req, res) => {
                    )
         }
 
-        existingStudent.age = age
+        existingStaff.age = age
         isModified = true
     }
 
     if(address) {
-        trimmedAddress = address.trim()
-        if(trimmedAddress && trimmedAddress !== existingStudent.address) {
-            existingStudent.address = address
+        const trimmedAddress = address.trim()
+        if(trimmedAddress && trimmedAddress !== existingStaff.address) {
+            existingStaff.address = address
             isModified = true
         }
     }
@@ -381,7 +379,6 @@ const getSchedules = asyncHandler(async(req, res) => {
         .sort({startAt: 1})
         .skip(skip)
         .limit(limitnum)
-        .select('__v')
     
     if(schedules.length === 0) {
         return res
@@ -454,7 +451,7 @@ const getScheduleById = asyncHandler(async(req, res) => {
 const updateScheduleById = asyncHandler(async(req, res) => {
     const currentUser = req.user
     const {scheduleId} = req.params
-    const {yearNo, semesterNo, batch, startAt, endAt} = req.body
+    const {title, yearNo, semesterNo, batch, startAt, endAt} = req.body
 
     if(!isValidObjectId(scheduleId)) {
         throw new ApiError(400, "Invalid schedule ID")
@@ -472,7 +469,7 @@ const updateScheduleById = asyncHandler(async(req, res) => {
     let isModified = false
 
     if(title) {
-        trimmedTitle = title.trim()
+        const trimmedTitle = title.trim()
         if(trimmedTitle && trimmedTitle !== currentSchedule.title) {
             currentSchedule.title = trimmedTitle
             isModified = true
@@ -490,7 +487,7 @@ const updateScheduleById = asyncHandler(async(req, res) => {
     }
 
      if(batch) {
-        trimmedBatch = batch.trim()
+        const trimmedBatch = batch.trim()
         if(trimmedBatch && currentSchedule.batch !== trimmedBatch) {
             currentSchedule.batch = trimmedBatch
             isModified = true
@@ -557,7 +554,7 @@ const addStudentToSchedule = asyncHandler(async(req, res) => {
                )
     }
 
-    const schedule = await Schedule.findById(scheduleId)
+    const schedule = await Schedule.findById(scheduleId).populate('attendees')
     if(!schedule) {
         return res
                .status(400)

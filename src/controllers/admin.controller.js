@@ -96,7 +96,7 @@ const getAllStaffs = asyncHandler(async(req, res) => {
             new ApiResponse(
                 200,
                 staffs,
-                "List of all Student data fetched successfully"
+                "List of all Staff data fetched successfully"
             )
            )
 })
@@ -139,7 +139,7 @@ const deleteStudentfById = asyncHandler(async(req, res) => {
         throw new ApiError(400, "Inavlid Staff Id")
     }
 
-    const student = await User.findById(staffId)
+    const student = await User.findById(studentId)
     if(!student) {
         throw new ApiError(404, "Staff not found")
     }

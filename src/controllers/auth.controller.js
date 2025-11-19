@@ -28,7 +28,7 @@ const userLogin = asyncHandler(async(req, res) => {
         throw new ApiError(401, "Invalid user credentials")
     }
 
-    const {refreshToken, accessToken} = generateAccessAndRefreshTokens(user._id)
+    const {refreshToken, accessToken} = await generateAccessAndRefreshTokens(user._id)
 
     const options = {
         httpOnly : true,
